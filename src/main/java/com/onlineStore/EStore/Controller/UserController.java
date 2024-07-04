@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/id")
-    public UserDTO findUserById(@RequestBody String id){
+    public UserDTO findUserById(@RequestBody int id){
         System.out.println("id is");
         System.out.println(id);
         return  us.findUserById(id);

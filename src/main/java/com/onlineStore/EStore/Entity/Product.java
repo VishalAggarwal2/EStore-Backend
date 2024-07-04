@@ -1,9 +1,6 @@
 package com.onlineStore.EStore.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -22,4 +19,7 @@ public class Product {
     private int quantity;
     private int price;
     private boolean isLive;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

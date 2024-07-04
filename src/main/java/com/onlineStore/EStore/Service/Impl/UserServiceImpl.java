@@ -36,7 +36,7 @@ public class UserServiceImpl  implements UserService {
                 .collect(Collectors.toList());
     }
     @Override
-    public void deleteUser(String userId) {
+    public void deleteUser(int userId) {
         userRepo.deleteById(userId);
     }
 
@@ -47,7 +47,7 @@ public class UserServiceImpl  implements UserService {
     }
 
     @Override
-    public UserDTO findUserById(String id) {
+    public UserDTO findUserById(int id) {
         return userRepo.findById(id)
                 .map(this::userEntityToUserDto)
                 .orElse(null);

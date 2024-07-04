@@ -10,5 +10,6 @@ import java.util.List;
 public interface productRepo extends JpaRepository<Product,Integer> {
     List<Product> findByProductNameContaining(String substring);
     List<Product> findByIsLiveTrue();
+    List<Product> findByCategory_Id(int categoryId);
 
 }

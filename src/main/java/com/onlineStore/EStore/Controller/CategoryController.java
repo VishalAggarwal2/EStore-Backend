@@ -1,12 +1,10 @@
 package com.onlineStore.EStore.Controller;
 
 import com.onlineStore.EStore.DTO.categoryDTO;
+import com.onlineStore.EStore.DTO.productDTO;
 import com.onlineStore.EStore.Service.Impl.catyegoryServicImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,4 +37,14 @@ public class CategoryController {
     }
 
 
+    @GetMapping("/{cid}/addproduct")
+    productDTO getById(@RequestBody productDTO product, @PathVariable int cid){
+        System.out.println("called added");
+        return cs.createProductAndCategory(product,cid);
+    }
+    @GetMapping("/{cid}/allproducts")
+    List<productDTO> getAllProducts(@PathVariable int cid){
+        System.out.println("called get");
+        return cs.getAllProducts(cid);
+    }
 }

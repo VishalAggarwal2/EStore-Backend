@@ -12,12 +12,12 @@ public interface UserService {
     List<UserDTO> getAllUser();
 
     // delete user
-    void deleteUser(String userId);
+    void deleteUser(int userId);
     // updateUser
     UserDTO updateUser(UserDTO user);
 
     // find userby id
-    UserDTO findUserById(String Id);
+    UserDTO findUserById(int Id);
 
     // find user by email
     UserDTO findUserByEmail(String Email);
